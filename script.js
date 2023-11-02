@@ -44,17 +44,15 @@ const generateStartingPositions = () => {
 
 const nextFrame = (grid) => {
     //move everything right by 1
-    let previous
-    const updatedGrid = grid.map((d) => {
-        if (previous == undefined) {
-            previous = d
-            return ""
+    for (let i = 0; i < grid.length; i++){
+        if (i == 0) continue
+    console.log("hello")
+        if (grid[i] == "") {
+            grid[i] = grid[i-1]
+            grid[i-1] = ""
         }
-
-        return previous
-    })
-    console.log(updatedGrid)
-
+    }
+    console.log(grid)
 }
 
 const handleKeyboardEvent = async (e) => {
